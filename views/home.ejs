@@ -3,6 +3,12 @@
 <p><%=startingContent%></p>
 <% posts.forEach(post => {%>
 <h1><%=post.title%></h1>
+<% let length = 100; %>
+<% let truncatedPost = post.content.substring(0, length - 3) + "..."; %>
+
+<% if(post.content.length > length) { %>
+<p><%=truncatedPost%></p>
+<%} else {%>
 <p><%=post.content%></p>
-<% }); %>
+<% }}); %>
 <%- include('partials/footer'); %>
